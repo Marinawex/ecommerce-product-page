@@ -1,6 +1,4 @@
-interface IconProps {
-  fillColor: string;
-}
+import IconProps from "../../_types/types";
 
 const CartIcon: React.FC<IconProps> = ({ fillColor }) => (
   <svg
