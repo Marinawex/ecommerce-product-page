@@ -9,25 +9,26 @@ import menu from "../public/imges/burger-menu-svgrepo-com.svg";
 import logo from "../public/imges/logo.svg";
 import plus from "../public/imges/icon-plus.svg";
 import minus from "../public/imges/icon-minus.svg";
+import CartIcon from "./components/icons/CartIcon";
 
 export default function Home() {
   return (
     <>
       <section id="Header" className="flex justify-between p-6">
         <nav className="flex space-x-2 content-evenly items-center">
-          <Image src={menu} width={23} height={22} alt="" />
+          <Image src={menu} width={23} height={22} alt="" className="lg:hidden"/>
           <Image src={logo} alt="" />
-          {/* <ul className="flex flex-row">
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul> */}
+          <ul className=" hidden lg:flex flex-row text-DarkGrayishBlue space-x-5 pl-8">
+            <li className="hover:text-Black">Collections</li>
+            <li className="hover:text-Black">Men</li>
+            <li className="hover:text-Black">Women</li>
+            <li className="hover:text-Black">About</li>
+            <li className="hover:text-Black">Contact</li>
+          </ul>
         </nav>
         <div className="flex space-x-6">
-          <Image src={cart} width={22} height={6} alt="/" />
-          <Image src={avatar} width={25} height={15} alt="/" />
+          <CartIcon fillColor={"fill-current text-DarkGrayishBlue hover:text-Orange"}/>
+          <Image src={avatar} width={25} height={15} alt="/" className="hover:border-2 border-Orange rounded-full"/>
         </div>
       </section>
 
