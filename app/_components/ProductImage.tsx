@@ -19,7 +19,7 @@ const ProductImage = () => {
       currentImageIndex == index ? " border-2 border-Orange opacity-50" : null;
     return (
       <Image
-      key={image.id}
+        key={image.id}
         src={image.imageThumbnail}
         width={200}
         height={200}
@@ -31,7 +31,7 @@ const ProductImage = () => {
   });
 
   return (
-    <div id="light-box flex flex-row">
+    <div id="light-box flex flex-row ">
       <LeftArrow
         strokeColor={
           "stroke-current text-Black hover:text-Orange cursor-pointer absolute lg:hidden"
@@ -43,6 +43,7 @@ const ProductImage = () => {
         width={500}
         height={500}
         alt="Sneakers"
+        priority
         className="lg:rounded-xl"
       ></Image>
 

@@ -2,14 +2,17 @@ import { Product } from "../_types/types";
 import AddtoCart from "./AddtoCart";
 import ProductImage from "./ProductImage";
 import productItem from "../_data/product.json";
+import LightBox from "./LightBox";
 
 const Product = () => {
   const product: Product = productItem;
 
   return (
     <main id="Product" className="lg:flex lg:mx-44 lg:p-10 ">
+        <LightBox/>
+      
       <ProductImage />
-
+    
       <div className="p-6 lg:p-10 lg:m-10 lg:pr-36 lg:space-y-6 space-y-4">
         <h2 className="text-Orange text-lg ">Sneaker Company</h2>
 
