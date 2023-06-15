@@ -57,9 +57,7 @@ export default function Home() {
 
       <hr className="hidden lg:flex mt-0 mx-44" />
 
-      <Product/>
-
-      
+      <Product />
     </>
   );
 }

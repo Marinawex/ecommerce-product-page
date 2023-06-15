@@ -18,3 +18,14 @@ export interface Product {
   price: number;
   images: Image[];
 }
+
+export interface AddtoCartProps {
+  amount?: number;
+  setAmount?: any;
+}
+export interface CartProps {
+  name: string;
+  price: number;
+  amount?: number;
+  totalPrice?: number;
+}

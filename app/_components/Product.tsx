@@ -8,12 +8,11 @@ import product3 from "../../public/imges/image-product-2.jpg";
 import product4 from "../../public/imges/image-product-4.jpg";
 import RightArrow from "./icons/RightArrow";
 import LeftArrow from "./icons/LeftArrow";
-
-
 import Image from "next/image";
 import { Product } from "../_types/types";
 import ProductAmount from "./ProductAmount";
 import AddToCartBtn from "./AddToCartBtn";
+import AddtoCart from "./AddtoCart";
 
 const Product = () => {
   const product: Product = {
@@ -30,6 +29,8 @@ const Product = () => {
       { id: 4, image: product4, imageThumbnail: product4Thumbnail },
     ],
   };
+
+  const getAmount = () => {};
   return (
     <main id="Product" className="lg:flex lg:mx-44 lg:p-10 ">
       <div id="light-box flex flex-row">
@@ -94,9 +95,7 @@ const Product = () => {
           </div>
         </div>
         <div className="lg:flex lg:space-x-10">
-          <ProductAmount/>
-          <AddToCartBtn/>
-        
+          <AddtoCart name={product.name} price={product.price} />
         </div>
       </div>
     </main>
