@@ -10,9 +10,9 @@ const RightArrow: React.FC<IconProps> = ({ strokeColor }) => (
     <path
       d="m2 1 8 8-8 8"
       stroke={strokeColor}
-      stroke-width="3"
+      strokeWidth="3"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     />
   </svg>
 );

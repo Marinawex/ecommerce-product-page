@@ -14,7 +14,7 @@ const PlusIcon: React.FC<IconProps> = ({ fillColor }) => (
         id="b"
       />
     </defs>
-    <use fill={fillColor} fill-rule="nonzero" xlinkHref="#b" />
+    <use fill={fillColor} fillRule="nonzero" xlinkHref="#b" />
   </svg>
 );
 export default PlusIcon;

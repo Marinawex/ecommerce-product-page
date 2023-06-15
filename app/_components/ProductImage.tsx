@@ -15,13 +15,16 @@ const ProductImage = () => {
   };
 
   const Thumbnailimages = images.map((image, index) => {
+    const currentThumbnail =
+      currentImageIndex == index ? " border-2 border-Orange opacity-50" : null;
     return (
       <Image
+      key={image.id}
         src={image.imageThumbnail}
         width={200}
         height={200}
         alt="Sneakers"
-        className="hidden lg:flex rounded-md m-4 cursor-pointer hover:opacity-50"
+        className={`hidden lg:flex rounded-md m-4 cursor-pointer hover:opacity-50 ${currentThumbnail}`}
         onClick={() => displayImage(index)}
       ></Image>
     );
@@ -31,7 +34,7 @@ const ProductImage = () => {
     <div id="light-box flex flex-row">
       <LeftArrow
         strokeColor={
-          "stroke-current text-Black hover:text-Orange cursor-pointer "
+          "stroke-current text-Black hover:text-Orange cursor-pointer absolute lg:hidden"
         }
       />
 
@@ -45,10 +48,10 @@ const ProductImage = () => {
 
       <RightArrow
         strokeColor={
-          "stroke-current text-Black hover:text-Orange cursor-pointer"
+          "stroke-current text-Black hover:text-Orange cursor-pointer absolute lg:hidden"
         }
       />
-      <div className="flex items-center">{Thumbnailimages}</div>
+      <div className="flex justify-around">{Thumbnailimages}</div>
     </div>
   );
 };

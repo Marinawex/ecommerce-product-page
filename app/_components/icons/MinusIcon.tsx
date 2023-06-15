@@ -14,7 +14,7 @@ const MinusIcon: React.FC<IconProps> = ({ fillColor }) => (
         id="a"
       />
     </defs>
-    <use fill={fillColor} fill-rule="nonzero" xlinkHref="#a" />
+    <use fill={fillColor} fillRule="nonzero" xlinkHref="#a" />
   </svg>
 );
 export default MinusIcon;

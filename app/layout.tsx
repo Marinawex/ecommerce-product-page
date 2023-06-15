@@ -36,7 +36,7 @@ export default function RootLayout({
               width={40}
               height={20}
               alt="/"
-              className="hover:border-2 border-Orange rounded-full"
+              className="hover:border-2 border-Orange rounded-full w-auto h-auto"
             />
           </div>
         </header>
