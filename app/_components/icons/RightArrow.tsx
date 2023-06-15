@@ -1,4 +1,4 @@
-import IconProps from "../../_types/types";
+import { IconProps } from "../../_types/types";
 
 const RightArrow: React.FC<IconProps> = ({ strokeColor }) => (
   <svg
