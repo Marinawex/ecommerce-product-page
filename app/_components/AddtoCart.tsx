@@ -20,6 +20,7 @@ const AddtoCart: React.FC<CartProps> = (props) => {
         price={price}
         amount={amount}
         totalPrice={totalPrice()}
+        
       />
       <ProductAmount amount={amount} setAmount={setAmount} />
       <AddToCartBtn amount={amount} />

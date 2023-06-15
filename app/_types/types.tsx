@@ -1,14 +1,14 @@
-import { StaticImageData } from "next/image";
+
 
 export interface IconProps {
   fillColor?: string;
   strokeColor?: string;
 }
 
-export interface Image {
+export interface ProductImage {
   id: number;
-  image: StaticImageData;
-  imageThumbnail: StaticImageData;
+  image: string;
+  imageThumbnail: string;
 }
 
 export interface Product {
@@ -16,7 +16,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  images: Image[];
+  images: ProductImage[];
 }
 
 export interface AddtoCartProps {

@@ -6,7 +6,7 @@ const Cart: React.FC<CartProps> = (props) => {
   const { name, price, amount, totalPrice } = props;
   const [products, setProducts] = useState<Array<Product>>();
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col lg:hidden">
       <div>Cart</div>
       <hr />
       <div>

@@ -1,5 +1,9 @@
 import "./globals.css";
 import { Kumbh_Sans } from "next/font/google";
+import CartIcon from "./_components/icons/CartIcon";
+import Image from "next/image";
+import avatar from "../public/images/image-avatar.png";
+import Nav from "./_components/Nav";
 
 const Kumbhs = Kumbh_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -15,7 +19,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Kumbhs.className}>{children}</body>
+      <body className={Kumbhs.className}>
+        <header
+          id="Header"
+          className="flex justify-between p-6 lg:mx-44 lg:mt-6"
+        >
+          <Nav />
+          <div className="flex space-x-6">
+            <CartIcon
+              fillColor={
+                "fill-current text-DarkGrayishBlue hover:text-Black cursor-pointer self-center"
+              }
+            />
+            <Image
+              src={avatar}
+              width={40}
+              height={20}
+              alt="/"
+              className="hover:border-2 border-Orange rounded-full"
+            />
+          </div>
+        </header>
+        <hr className="hidden lg:flex mt-0 mx-44" />
+        {children}
+      </body>
     </html>
   );
 }
