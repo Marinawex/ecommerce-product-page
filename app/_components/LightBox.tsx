@@ -6,6 +6,7 @@ import LeftArrow from "./icons/LeftArrow";
 import { ProductImage } from "../_types/types";
 import product from "../_data/product.json";
 import { useState } from "react";
+import CloseIcon from "./icons/CloseIcon";
 
 const LightBox = () => {
   const images: ProductImage[] = product.images;
@@ -53,15 +54,23 @@ const LightBox = () => {
 
   return (
     <>
-      <div className="flex justify-center content-end relative">
+    <button className=" p-4">
+            <CloseIcon
+              fillColor={
+                "fill-current text-DarkGrayishBlue hover:text-Orange cursor-pointer self-center"
+              }
+            />
+          </button>
+      <div className="flex justify-center content-end relative ">
         <div className="relative">
+          
           <div
-            className="bg-White rounded-full p-4 border border-Black absolute top-0 left-0 transform translate-y-60 -translate-x-4"
+            className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 left-0 transform translate-y-60 -translate-x-4"
             onClick={SlideImageLeft}
           >
             <LeftArrow
               strokeColor={
-                "stroke-current text-Black hover:text-Orange cursor-pointer  "
+                "stroke-current text-Black hover:text-Orange cursor-pointer "
               }
             />
           </div>
@@ -74,7 +83,7 @@ const LightBox = () => {
             className="lg:rounded-xl"
           ></Image>
           <div
-            className="bg-White rounded-full p-4 border border-Black absolute top-0 right-0 transform translate-x-6 translate-y-60"
+            className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform translate-x-6 translate-y-60"
             onClick={SlideImageRight}
           >
             <RightArrow

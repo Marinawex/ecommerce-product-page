@@ -32,11 +32,13 @@ const ProductImage = () => {
 
   return (
     <div id="light-box flex flex-row ">
-      <LeftArrow
-        strokeColor={
-          "stroke-current text-Black hover:text-Orange cursor-pointer absolute lg:hidden"
-        }
-      />
+      <div className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 left-0 transform translate-y-60 lg:hidden">
+        <LeftArrow
+          strokeColor={
+            "stroke-current text-Black hover:text-Orange cursor-pointer "
+          }
+        />
+      </div>
 
       <Image
         src={images[currentImageIndex].image}
@@ -47,11 +49,13 @@ const ProductImage = () => {
         className="lg:rounded-xl"
       ></Image>
 
-      <RightArrow
-        strokeColor={
-          "stroke-current text-Black hover:text-Orange cursor-pointer absolute lg:hidden"
-        }
-      />
+      <div className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform  translate-y-60 lg:hidden">
+        <RightArrow
+          strokeColor={
+            "stroke-current text-Black hover:text-Orange cursor-pointer  "
+          }
+        />
+      </div>
       <div className="flex justify-around">{Thumbnailimages}</div>
     </div>
   );

@@ -9,7 +9,7 @@ const Product = () => {
 
   return (
     <main id="Product" className="lg:flex lg:mx-44 lg:p-10 ">
-        <LightBox/>
+      
       
       <ProductImage />
     
@@ -30,11 +30,13 @@ const Product = () => {
           >
             50%
           </div>
+          
           <div
             id="price-before-discount"
             className="text-DarkGrayishBlue line-through"
           >
             {" "}
+         
             $250.00
           </div>
         </div>

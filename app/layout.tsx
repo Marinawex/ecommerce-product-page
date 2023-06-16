@@ -26,11 +26,15 @@ export default function RootLayout({
         >
           <Nav />
           <div className="flex space-x-6">
+          <div className=" relative">
+            <div className="bg-Orange rounded-full  px-2 text-xs text-White font-thin">5</div>
             <CartIcon
               fillColor={
                 "fill-current text-DarkGrayishBlue hover:text-Black cursor-pointer self-center"
               }
             />
+            </div>
+
             <Image
               src={avatar}
               width={40}
