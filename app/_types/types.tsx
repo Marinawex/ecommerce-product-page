@@ -23,9 +23,11 @@ export interface AddtoCartProps {
   amount?: number;
   setAmount?: any;
 }
-export interface CartProps {
+
+
+export interface CartItem {
+  id: number;
   name: string;
+  quantity: number;
   price: number;
-  amount?: number;
-  totalPrice?: number;
 }

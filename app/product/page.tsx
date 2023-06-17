@@ -2,6 +2,7 @@ import { Product } from "../_types/types";
 import AddtoCart from "../_components/AddtoCart";
 import ProductImage from "../_components/ProductImage";
 import productItem from "../_data/product.json";
+import Cart from "../_components/Cart";
 
 export default function Product() {
   const product: Product = productItem;
@@ -36,8 +37,9 @@ export default function Product() {
             $250.00
           </div>
         </div>
+        <Cart/>
         <div className="lg:flex lg:space-x-10">
-          <AddtoCart name={product.name} price={product.price} />
+          <AddtoCart product={product}/>
         </div>
       </div>
     </main>
