@@ -16,6 +16,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  quantity:number // delete!
   images: ProductImage[];
 }
 
@@ -31,3 +32,9 @@ export interface CartItem {
   quantity: number;
   price: number;
 }
+
+// export interface CartItem {
+//   productId:number;
+//   quantity: number;
+//   product: Product;
+// }

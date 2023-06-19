@@ -11,7 +11,7 @@ const Cart = () => {
 
   const items = cartItems?.map((item) => {
     return (
-      <div id="product" className="flex">
+      <div id="product" className="flex" key={item.id}>
         <div id="image"></div>
         <div id="name">{item.name}</div>
         <div id="">{`${item.price} x ${item.quantity} ${
@@ -22,7 +22,6 @@ const Cart = () => {
           onClick={() => {
             dispatch!({
               type: CartActionTypes.REMOVE_FROM_CART,
-              id: item.id,
               payload: item,
             });
           }}

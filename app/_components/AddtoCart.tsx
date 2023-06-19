@@ -15,7 +15,7 @@ const AddtoCart = ({ product }: { product: Product }) => {
   const cartItems = UseCartItems();
   const dispatch = UseCartItemsDispatch();
   
-  console.log(product);
+  
   
   return (
     <>
@@ -26,19 +26,17 @@ const AddtoCart = ({ product }: { product: Product }) => {
         <div onClick={() => {
            dispatch!({
             type: CartActionTypes.DECREASE_QUANTITY,
-            id: product.id,
-            payload: {...product, quantity: initialQuantity}
+            payload: product
           });
         }}>
           <MinusIcon fillColor="fill-current text-Orange hover:opacity-75 cursor-pointer " />
         </div>
-        <div className="font-bold">{initialQuantity}</div>
+        <div className="font-bold">{ cartItems[0]?.quantity ? cartItems[0].quantity : 0}</div>
         <div
           onClick={() => {
             dispatch!({
-              type: CartActionTypes.INCREASE_QUANTITY,
-              id: product.id,
-              payload: { ...product, quantity: initialQuantity },
+              type: CartActionTypes.ADD_TO_CART,
+              payload: product
             });
           }}
         >
@@ -51,8 +49,7 @@ const AddtoCart = ({ product }: { product: Product }) => {
         onClick={()=> {
           dispatch!({
             type: CartActionTypes.ADD_TO_CART,
-            id: nextId++,
-            payload: {...product, quantity:initialQuantity}
+            payload: product
           });
         }}
       >
