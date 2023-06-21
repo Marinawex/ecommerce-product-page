@@ -16,25 +16,31 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  quantity:number // delete!
   images: ProductImage[];
 }
 
-export interface AddtoCartProps {
-  amount?: number;
-  setAmount?: any;
-}
 
+
+
+// Cart types
 
 export interface CartItem {
-  id: number;
-  name: string;
+  productId:number;
   quantity: number;
-  price: number;
+  product: Product;
 }
 
-// export interface CartItem {
-//   productId:number;
-//   quantity: number;
-//   product: Product;
-// }
+export interface Payload {
+  product: Product;
+  quantity?: number;
+}
+
+export enum CartActionTypes {
+  ADD_TO_CART = "ADD_TO_CART",
+  REMOVE_FROM_CART = "REMOVE_FROM_CART",
+}
+
+export interface CartAction {
+  type: CartActionTypes;
+  payload: Payload;
+}

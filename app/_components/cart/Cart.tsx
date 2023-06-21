@@ -1,28 +1,24 @@
 "use client";
-import {
-  UseCartItems,
-  UseCartItemsDispatch,
-  CartActionTypes,
-} from "../_providers/cartContext";
+import { UseCart } from "../../_hooks/useCart";
+import { CartActionTypes } from "../../_types/types";
 
 const Cart = () => {
-  const cartItems = UseCartItems();
-  const dispatch = UseCartItemsDispatch();
+  const { cartItems, dispatch } = UseCart();
 
   const items = cartItems?.map((item) => {
     return (
-      <div id="product" className="flex" key={item.id}>
+      <div id="product" className="flex" key={item.productId}>
         <div id="image"></div>
-        <div id="name">{item.name}</div>
-        <div id="">{`${item.price} x ${item.quantity} ${
-          item.price * item.quantity
+        <div id="name">{item.product.name}</div>
+        <div id="">{`${item.product.price} x ${item.quantity} ${
+          item.product.price * item.quantity
         }`}</div>
         <button
           id="delete-product"
           onClick={() => {
             dispatch!({
               type: CartActionTypes.REMOVE_FROM_CART,
-              payload: item,
+              payload: { product: item.product },
             });
           }}
         >
