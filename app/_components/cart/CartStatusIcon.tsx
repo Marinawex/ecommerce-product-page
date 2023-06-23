@@ -14,12 +14,12 @@ function CartStatusIcon() {
   return (
     <div className=" self-center">
       {cartItems.length > 0 && (
-        <div className="bg-Orange rounded-full  px-2 text-xs text-White font-thin">
+        <div className="bg-Orange rounded-full  px-2 text-xs text-White font-thin ">
           {cartItemsQuantity}
         </div>
       )}
       <CartModal
-        children={<Cart /> || null}
+        children={<Cart />}
         openBtnProp={
           <CartIcon
             fillColor={

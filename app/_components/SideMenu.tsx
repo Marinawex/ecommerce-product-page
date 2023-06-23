@@ -1,10 +1,6 @@
 "use client";
-import { useState, useEffect, ReactNode } from "react";
-
-interface ModalsProps {
-  children: ReactNode;
-  openBtnProp: ReactNode;
-}
+import { useState, useEffect } from "react";
+import { ModalsProps } from "../_types/types";
 
 function SideMenu({ children, openBtnProp }: ModalsProps) {
   const [showModal, setShowModal] = useState(false);

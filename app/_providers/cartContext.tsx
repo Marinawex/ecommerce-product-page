@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { cartReducer } from "../_components/cart/cartReducer";
 import { CartItem, CartAction } from "../_types/types";
 

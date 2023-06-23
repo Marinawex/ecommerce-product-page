@@ -1,9 +1,4 @@
-
-
-export interface IconProps {
-  fillColor?: string;
-  strokeColor?: string;
-}
+import { ReactNode } from "react";
 
 export interface ProductImage {
   id: number;
@@ -19,13 +14,10 @@ export interface Product {
   images: ProductImage[];
 }
 
-
-
-
 // Cart types
 
 export interface CartItem {
-  productId:number;
+  productId: number;
   quantity: number;
   product: Product;
 }
@@ -43,4 +35,16 @@ export enum CartActionTypes {
 export interface CartAction {
   type: CartActionTypes;
   payload: Payload;
+}
+
+//props
+
+export interface IconProps {
+  fillColor?: string;
+  strokeColor?: string;
+}
+
+export interface ModalsProps {
+  children: ReactNode;
+  openBtnProp: ReactNode;
 }

@@ -6,7 +6,7 @@ import LeftArrow from "./icons/LeftArrow";
 import { ProductImage } from "../_types/types";
 import product from "../_data/product.json";
 import { useState , useEffect} from "react";
-import CloseIcon from "./icons/CloseIcon";
+
 
 const LightBox = () => {
   const images: ProductImage[] = product.images;
@@ -71,17 +71,11 @@ const LightBox = () => {
 
   return (
     <>
-    <button className=" p-4">
-            <CloseIcon
-              fillColor={
-                "fill-current text-DarkGrayishBlue hover:text-Orange cursor-pointer self-center"
-              }
-            />
-          </button>
+ 
       <div className="flex justify-center content-end relative ">
         <div className="relative">
           
-          <div
+          <button
             className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 left-0 transform translate-y-60 -translate-x-4"
             onClick={SlideImageLeft}
           >
@@ -90,7 +84,7 @@ const LightBox = () => {
                 "stroke-current text-Black hover:text-Orange cursor-pointer "
               }
             />
-          </div>
+          </button>
           <Image
             src={images[currentImageIndex].image}
             width={520}
@@ -99,7 +93,7 @@ const LightBox = () => {
             priority
             className="lg:rounded-xl"
           ></Image>
-          <div
+          <button
             className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform translate-x-6 translate-y-60"
             onClick={SlideImageRight}
           >
@@ -108,7 +102,7 @@ const LightBox = () => {
                 "stroke-current text-Black hover:text-Orange cursor-pointer"
               }
             />
-          </div>
+          </button>
           <div className="flex justify-center">{Thumbnailimages}</div>
         </div>
       </div>

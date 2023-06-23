@@ -5,14 +5,13 @@ import { CartActionTypes } from "../../_types/types";
 import DeleteIcon from "../icons/DeleteIcon";
 
 const Cart = () => {
- 
   const { cartItems, dispatch } = UseCart();
 
   const items = cartItems?.map((item) => {
     return (
       <div
         id="product"
-        className="flex justify-between gap-2 text-DarkGrayishBlue"
+        className="flex justify-between gap-4 text-DarkGrayishBlue "
         key={item.productId}
       >
         <Image
@@ -48,14 +47,17 @@ const Cart = () => {
   });
 
   return (
-    <div className="flex flex-col  ">
-      <div className="p-2">Cart</div>
+    <div className="flex flex-col">
+      <h3 className="p-4">Cart</h3>
       <hr />
-      {cartItems.length > 0 ?  <div className="flex flex-col justify-center p-8 space-y-4">
-        {items}
-        <button className="bg-Orange rounded-md p-2 px-4">Checkout</button>
-      </div> : <p className="p-10 m-10">Your Cart is empty.</p>}
-     
+      {cartItems.length > 0 ? (
+        <div className="flex flex-col p-8 space-y-4">
+          {items}
+          <button className="bg-Orange rounded-md p-2 px-4">Checkout</button>
+        </div>
+      ) : (
+        <p className="p-8 m-10">Your Cart is empty.</p>
+      )}
     </div>
   );
 };
