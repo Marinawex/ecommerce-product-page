@@ -17,8 +17,7 @@ function Modal({children} : {children:ReactNode}) {
   useEffect(() => {
     const handleKeyDown = (e:KeyboardEvent) => {
         e.preventDefault()
-        console.log('ArrowRight','ArrowLeft');
-        
+      
         if (e.key === "Escape" ) {
             handleHide()
         }
