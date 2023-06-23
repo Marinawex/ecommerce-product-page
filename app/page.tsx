@@ -1,10 +1,9 @@
-import LightBox from "./_components/LightBox";
+
 
 export default function Home() {
   return (
     <>
-      {/* <Product /> */}
-      {/* <LightBox/> */}
+   <h1 className="flex justify-center">welcome</h1> 
     
     </>
   );

@@ -5,7 +5,7 @@ import RightArrow from "./icons/RightArrow";
 import LeftArrow from "./icons/LeftArrow";
 import { ProductImage } from "../_types/types";
 import product from "../_data/product.json";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import CloseIcon from "./icons/CloseIcon";
 
 const LightBox = () => {
@@ -33,6 +33,23 @@ const LightBox = () => {
       setCurrentImageIndex(currentImageIndex + 1);
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e:KeyboardEvent) => {
+        e.preventDefault()
+        if (e.key === 'ArrowRight' ) {
+            SlideImageRight()
+        }
+        else if(e.key === 'ArrowLeft'){
+          SlideImageLeft()
+        }
+      }
+
+      document.addEventListener("keydown", handleKeyDown);
+      return () => document.removeEventListener("keydown", handleKeyDown);
+   
+},[currentImageIndex])
+  
 
   const Thumbnailimages = images.map((image, index) => {
     const currentThumbnail =

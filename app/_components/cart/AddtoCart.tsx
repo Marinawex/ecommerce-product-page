@@ -6,9 +6,10 @@ import { Product, CartActionTypes } from "../../_types/types";
 import { useState } from "react";
 import { UseCart } from "../../_hooks/useCart";
 
+
 const AddtoCart = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(0);
-  const { dispatch } = UseCart();
+  const { cartItems,dispatch } = UseCart();
 
   function handleDecreseItemQuantity() {
     if (!quantity) {
@@ -24,13 +25,13 @@ const AddtoCart = ({ product }: { product: Product }) => {
         id="Amount"
         className="bg-LightGrayishBlue grow-1  lg:px-10 flex justify-evenly items-center p-4 rounded-md lg:space-x-8"
       >
-        <div onClick={handleDecreseItemQuantity}>
+        <button onClick={handleDecreseItemQuantity}>
           <MinusIcon fillColor="fill-current text-Orange hover:opacity-75 cursor-pointer " />
-        </div>
+        </button>
         <div className="font-bold">{quantity}</div>
-        <div onClick={() => setQuantity(quantity + 1)}>
+        <button onClick={() => setQuantity(quantity + 1)}>
           <PlusIcon fillColor="fill-current text-Orange hover:opacity-75 cursor-pointer " />
-        </div>
+        </button>
       </div>
 
       <button

@@ -5,6 +5,8 @@ import LeftArrow from "./icons/LeftArrow";
 import { ProductImage } from "../_types/types";
 import product from "../_data/product.json";
 import { useState } from "react";
+import Modal from "./Modal";
+import LightBox from "./LightBox";
 
 const ProductImage = () => {
   const images: ProductImage[] = product.images;
@@ -31,6 +33,8 @@ const ProductImage = () => {
   });
 
   return (
+    <>
+   
     <div id="light-box flex flex-row ">
       <div className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 left-0 transform translate-y-60 lg:hidden">
         <LeftArrow
@@ -41,6 +45,7 @@ const ProductImage = () => {
       </div>
 
       <Image
+      
         src={images[currentImageIndex].image}
         width={500}
         height={500}
@@ -48,8 +53,8 @@ const ProductImage = () => {
         priority
         className="lg:rounded-xl"
       ></Image>
-
-      <div className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform  translate-y-60 lg:hidden">
+ <Modal>{<LightBox/>}</Modal>
+      <div className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform translate-x-6 translate-y-60 lg:hidden">
         <RightArrow
           strokeColor={
             "stroke-current text-Black hover:text-Orange cursor-pointer  "
@@ -58,6 +63,7 @@ const ProductImage = () => {
       </div>
       <div className="flex justify-around">{Thumbnailimages}</div>
     </div>
+    </>
   );
 };
 

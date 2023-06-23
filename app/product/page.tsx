@@ -2,7 +2,7 @@ import { Product } from "../_types/types";
 import AddtoCart from "../_components/cart/AddtoCart";
 import ProductImage from "../_components/ProductImage";
 import productItem from "../_data/product.json";
-import Cart from "../_components/cart/Cart";
+
 
 export default function Product() {
   const product: Product = productItem;
@@ -37,7 +37,7 @@ export default function Product() {
             $250.00
           </div>
         </div>
-        <Cart />
+
         <div className="lg:flex lg:space-x-10">
           <AddtoCart product={product} />
         </div>
