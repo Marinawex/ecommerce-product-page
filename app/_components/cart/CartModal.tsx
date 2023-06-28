@@ -31,7 +31,9 @@ function CartModal({ children, openBtnProp }: ModalsProps) {
 
   return (
     <>
-      <button onClick={handleShow}>{openBtnProp}</button>
+      <button onClick={handleShow} aria-label="show cart preview">
+        {openBtnProp}
+      </button>
       {showModal && (
         <>
           <div

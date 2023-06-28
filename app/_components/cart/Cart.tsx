@@ -7,7 +7,6 @@ import DeleteIcon from "../icons/DeleteIcon";
 const Cart = () => {
   const { cartItems, dispatch } = UseCart();
 
-
   const items = cartItems?.map((item) => {
     return (
       <div

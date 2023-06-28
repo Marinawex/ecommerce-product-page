@@ -6,10 +6,9 @@ import { Product, CartActionTypes } from "../../_types/types";
 import { useState, useEffect } from "react";
 import { UseCart } from "../../_hooks/useCart";
 
-
 const AddtoCart = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(0);
-  const { cartItems,dispatch } = UseCart();
+  const { cartItems, dispatch } = UseCart();
 
   function handleDecreseItemQuantity() {
     if (!quantity) {
@@ -20,9 +19,8 @@ const AddtoCart = ({ product }: { product: Product }) => {
   }
 
   useEffect(() => {
-    localStorage.setItem('cart-Items', JSON.stringify(cartItems));
+    localStorage.setItem("cart-Items", JSON.stringify(cartItems));
   }, [cartItems]);
-
 
   return (
     <>
@@ -30,11 +28,17 @@ const AddtoCart = ({ product }: { product: Product }) => {
         id="Amount"
         className="bg-LightGrayishBlue grow-1  lg:px-10 flex justify-evenly items-center p-4 rounded-md lg:space-x-8"
       >
-        <button onClick={handleDecreseItemQuantity}>
+        <button
+          onClick={handleDecreseItemQuantity}
+          aria-label="Decrese item quantity"
+        >
           <MinusIcon fillColor="fill-current text-Orange hover:opacity-75 cursor-pointer " />
         </button>
         <div className="font-bold">{quantity}</div>
-        <button onClick={() => setQuantity(quantity + 1)}>
+        <button
+          onClick={() => setQuantity(quantity + 1)}
+          aria-label="increase item quantity"
+        >
           <PlusIcon fillColor="fill-current text-Orange hover:opacity-75 cursor-pointer " />
         </button>
       </div>

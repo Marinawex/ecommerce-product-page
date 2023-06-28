@@ -7,8 +7,13 @@ import LightBox from "./LightBox";
 import useImageSlider from "../_hooks/useImageSlider";
 
 const ProductImage = () => {
-const {images, currentImageIndex, displayImage, SlideImageLeft, SlideImageRight, } = useImageSlider()
-
+  const {
+    images,
+    currentImageIndex,
+    displayImage,
+    SlideImageLeft,
+    SlideImageRight,
+  } = useImageSlider();
 
   const Thumbnailimages = images.map((image, index) => {
     const currentThumbnail =
@@ -32,6 +37,7 @@ const {images, currentImageIndex, displayImage, SlideImageLeft, SlideImageRight,
         <button
           onClick={SlideImageLeft}
           className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 left-0 transform translate-y-60 lg:hidden"
+          aria-label="Slide image left"
         >
           <LeftArrow
             strokeColor={
@@ -55,6 +61,7 @@ const {images, currentImageIndex, displayImage, SlideImageLeft, SlideImageRight,
         <button
           onClick={SlideImageRight}
           className="bg-White rounded-full p-4 border cursor-pointer border-Black absolute top-0 right-0 transform translate-x-6 translate-y-60 lg:hidden"
+          aria-label="Slide image right"
         >
           <RightArrow
             strokeColor={

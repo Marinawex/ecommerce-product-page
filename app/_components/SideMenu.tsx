@@ -28,7 +28,9 @@ function SideMenu({ children, openBtnProp }: ModalsProps) {
 
   return (
     <>
-      <button onClick={handleShow}>{openBtnProp}</button>
+      <button onClick={handleShow} aria-label="open navigation menu">
+        {openBtnProp}
+      </button>
       {showModal && (
         <>
           <div
