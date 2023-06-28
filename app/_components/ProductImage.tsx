@@ -2,51 +2,13 @@
 import Image from "next/image";
 import RightArrow from "./icons/RightArrow";
 import LeftArrow from "./icons/LeftArrow";
-import { ProductImage } from "../_types/types";
-import product from "../_data/product.json";
-import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import LightBox from "./LightBox";
+import useImageSlider from "../_hooks/useImageSlider";
 
 const ProductImage = () => {
-  const images: ProductImage[] = product.images;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const {images, currentImageIndex, displayImage, SlideImageLeft, SlideImageRight, } = useImageSlider()
 
-  const displayImage = (index: number) => {
-    setCurrentImageIndex(index);
-  };
-
-  const SlideImageLeft = () => {
-    const lastIndex = images.length - 1;
-    if (!currentImageIndex) {
-      setCurrentImageIndex(lastIndex);
-    } else {
-      setCurrentImageIndex(currentImageIndex - 1);
-    }
-  };
-
-  const SlideImageRight = () => {
-    const lastIndex = images.length - 1;
-    if (currentImageIndex == lastIndex) {
-      setCurrentImageIndex(0);
-    } else {
-      setCurrentImageIndex(currentImageIndex + 1);
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      e.preventDefault();
-      if (e.key === "ArrowRight") {
-        SlideImageRight();
-      } else if (e.key === "ArrowLeft") {
-        SlideImageLeft();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [currentImageIndex]);
 
   const Thumbnailimages = images.map((image, index) => {
     const currentThumbnail =
