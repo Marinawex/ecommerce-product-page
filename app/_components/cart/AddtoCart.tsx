@@ -3,7 +3,7 @@ import CartIcon from "../icons/CartIcon";
 import MinusIcon from "../icons/MinusIcon";
 import PlusIcon from "../icons/PlusIcon";
 import { Product, CartActionTypes } from "../../_types/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UseCart } from "../../_hooks/useCart";
 
 
@@ -18,6 +18,11 @@ const AddtoCart = ({ product }: { product: Product }) => {
       setQuantity(quantity - 1);
     }
   }
+
+  useEffect(() => {
+    localStorage.setItem('cart-Items', JSON.stringify(cartItems));
+  }, [cartItems]);
+
 
   return (
     <>
