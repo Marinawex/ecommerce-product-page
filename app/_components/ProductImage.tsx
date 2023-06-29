@@ -46,17 +46,19 @@ const ProductImage = () => {
           />
         </button>
 
-        <Image
-          src={images[currentImageIndex].image}
-          width={500}
-          height={500}
-          alt="Sneakers"
-          priority
-          className="lg:rounded-xl"
-        ></Image>
-        <div className="hidden lg:flex">
-          <Modal>{<LightBox />}</Modal>
-        </div>
+        <Modal
+          children={<LightBox />}
+          openBtnProp={
+            <Image
+              src={images[currentImageIndex].image}
+              width={450}
+              height={100}
+              alt="Sneakers"
+              priority
+              className="lg:rounded-xl"
+            ></Image>
+          }
+        />
 
         <button
           onClick={SlideImageRight}

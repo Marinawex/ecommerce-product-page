@@ -1,34 +1,16 @@
 "use client";
-import { useState, useEffect, ReactNode } from "react";
 import CloseIcon from "./icons/CloseIcon";
+import { ModalsProps } from "../_types/types";
+import useModal from "../_hooks/useModal";
 
-function Modal({ children }: { children: ReactNode }) {
-  const [showModal, setShowModal] = useState(false);
-
-  function handleShow() {
-    setShowModal(!showModal);
-  }
-
-  function handleHide() {
-    setShowModal(false);
-  }
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      e.preventDefault();
-
-      if (e.key === "Escape") {
-        handleHide();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [showModal]);
+function Modal({ children, openBtnProp }: ModalsProps) {
+  const { showModal, handleShow, handleHide } = useModal();
 
   return (
     <>
-      <button onClick={handleShow}>open</button>
+      <button onClick={handleShow} className="focus:outline-none">
+        {openBtnProp}
+      </button>
       {showModal && (
         <>
           <div
@@ -40,14 +22,14 @@ function Modal({ children }: { children: ReactNode }) {
               id="overlay"
               className="bg-black bg-opacity-75 w-screen h-screen "
             >
-              <button onClick={handleHide} className="p-10 float-right ">
-                <CloseIcon
-                  fillColor={
-                    "fill-current text-white hover:text-Orange cursor-pointer"
-                  }
-                />
-              </button>
               <div className=" self-center my-36 rounded-md p-2">
+                <button onClick={handleHide} className="float-right p-10">
+                  <CloseIcon
+                    fillColor={
+                      "fill-current text-white hover:text-Orange cursor-pointer"
+                    }
+                  />
+                </button>
                 {children}
               </div>
             </div>

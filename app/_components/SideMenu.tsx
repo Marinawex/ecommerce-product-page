@@ -1,35 +1,18 @@
 "use client";
-import { useState, useEffect } from "react";
 import { ModalsProps } from "../_types/types";
 import CloseIcon from "./icons/CloseIcon";
+import useModal from "../_hooks/useModal";
 
 function SideMenu({ children, openBtnProp }: ModalsProps) {
-  const [showModal, setShowModal] = useState(false);
-
-  function handleShow() {
-    setShowModal(!showModal);
-  }
-
-  function handleHide() {
-    setShowModal(false);
-  }
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      e.preventDefault();
-
-      if (e.key === "Escape") {
-        handleHide();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [showModal]);
+  const { showModal, handleShow, handleHide } = useModal();
 
   return (
     <>
-      <button onClick={handleShow} aria-label="open navigation menu">
+      <button
+        onClick={handleShow}
+        aria-label="open navigation menu"
+        className="focus:outline-none"
+      >
         {openBtnProp}
       </button>
       {showModal && (
@@ -43,16 +26,12 @@ function SideMenu({ children, openBtnProp }: ModalsProps) {
               id="overlay"
               className="bg-black bg-opacity-75 w-screen h-screen "
             >
-               
               <div className=" bg-white  absolute inset-y-0 left-0 w-80 p-10">
-              <button onClick={handleHide} className="pb-8">
-                <CloseIcon
-                  fillColor={
-                    "fill-current text-DarkGrayishBlue"
-                  }
-                />
+                <button onClick={handleHide} className="pb-8">
+                  <CloseIcon fillColor={"fill-current text-DarkGrayishBlue"} />
                 </button>
-                {children}</div>
+                {children}
+              </div>
             </div>
           </div>
         </>

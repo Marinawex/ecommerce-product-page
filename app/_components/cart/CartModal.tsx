@@ -1,37 +1,17 @@
 "use client";
-import { useState, useEffect, ReactNode } from "react";
-
-interface ModalsProps {
-  children: ReactNode;
-  openBtnProp: ReactNode;
-}
+import useModal from "@/app/_hooks/useModal";
+import { ModalsProps } from "@/app/_types/types";
 
 function CartModal({ children, openBtnProp }: ModalsProps) {
-  const [showModal, setShowModal] = useState(false);
-
-  function handleShow() {
-    setShowModal(!showModal);
-  }
-
-  function handleHide() {
-    setShowModal(false);
-  }
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      e.preventDefault();
-      if (e.key === "Escape") {
-        handleHide();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [showModal]);
+  const { showModal, handleShow } = useModal();
 
   return (
     <>
-      <button onClick={handleShow} aria-label="show cart preview">
+      <button
+        onClick={handleShow}
+        aria-label="show cart preview"
+        className="focus:outline-none"
+      >
         {openBtnProp}
       </button>
       {showModal && (
