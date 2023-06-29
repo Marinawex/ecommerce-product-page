@@ -48,3 +48,12 @@ export interface ModalsProps {
   children: ReactNode;
   openBtnProp: ReactNode;
 }
+
+
+//hooks
+
+export interface ModalHook {
+  showModal: boolean;
+  handleShow: () => void;
+  handleHide: () => void;
+}

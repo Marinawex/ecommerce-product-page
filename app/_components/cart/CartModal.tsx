@@ -17,6 +17,7 @@ function CartModal({ children, openBtnProp }: ModalsProps) {
       {showModal && (
         <>
           <div
+            id="modal"
             className="flex overflow-y-auto fixed  z-50  shadow-xl rounded-xl "
             role="dialog"
             aria-modal={true}

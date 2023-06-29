@@ -14,6 +14,7 @@ function Modal({ children, openBtnProp }: ModalsProps) {
       {showModal && (
         <>
           <div
+            id="modal"
             className="flex justify-center content-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
             role="dialog"
             aria-modal={true}

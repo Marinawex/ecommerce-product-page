@@ -52,7 +52,7 @@ const ProductImage = () => {
             <Image
               src={images[currentImageIndex].image}
               width={450}
-              height={100}
+              height={0}
               alt="Sneakers"
               priority
               className="lg:rounded-xl"

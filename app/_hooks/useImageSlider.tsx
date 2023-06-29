@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import product from "../_data/product.json";
 import { ProductImage } from "../_types/types";
 
 function useImageSlider() {
-    const images: ProductImage[] = product.images;
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images: ProductImage[] = product.images;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const displayImage = (index: number) => {
     setCurrentImageIndex(index);
@@ -46,10 +46,10 @@ function useImageSlider() {
   return {
     images,
     currentImageIndex,
-    displayImage, 
+    displayImage,
     SlideImageLeft,
-    SlideImageRight
-}
+    SlideImageRight,
+  };
 }
 
-export default useImageSlider
+export default useImageSlider;
