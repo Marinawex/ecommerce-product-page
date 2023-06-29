@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 import SideMenu from "./SideMenu";
 
-
 const Nav = () => {
   const navLinks = ["Collections", "Men", "Women", "About", "Contact"];
   return (
@@ -12,7 +11,7 @@ const Nav = () => {
       <div className="self-center">
         <SideMenu
           children={
-            <ul className="flex flex-col text-VeryDarkBlue ">
+            <ul className="flex flex-col gap-5 font-bold text-VeryDarkBlue ">
               {navLinks.map((link) => (
                 <li>{link}</li>
               ))}
