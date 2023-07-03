@@ -3,7 +3,7 @@ import { ModalsProps } from "../_types/types";
 import CloseIcon from "./icons/CloseIcon";
 import useModal from "../_hooks/useModal";
 
-function SideMenu({ children, openBtnProp }: ModalsProps) {
+function SideMenu({ children, triggerElement }: ModalsProps) {
   const { showModal, handleShow, handleHide } = useModal();
 
   return (
@@ -13,7 +13,7 @@ function SideMenu({ children, openBtnProp }: ModalsProps) {
         aria-label="open navigation menu"
         className="focus:outline-none"
       >
-        {openBtnProp}
+        {triggerElement}
       </button>
       {showModal && (
         <>

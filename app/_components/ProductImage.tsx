@@ -48,7 +48,7 @@ const ProductImage = () => {
 
         <Modal
           children={<LightBox />}
-          openBtnProp={
+          triggerElement={
             <Image
               src={images[currentImageIndex].image}
               width={450}

@@ -11,7 +11,7 @@ const Cart = () => {
     return (
       <div
         id="product"
-        className="flex justify-between gap-4 text-DarkGrayishBlue "
+        className="flex items-center justify-center gap-16 mx-6 text-DarkGrayishBlue "
         key={item.productId}
       >
         <Image

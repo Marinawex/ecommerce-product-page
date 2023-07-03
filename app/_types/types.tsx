@@ -46,9 +46,8 @@ export interface IconProps {
 
 export interface ModalsProps {
   children: ReactNode;
-  openBtnProp: ReactNode;
+  triggerElement: ReactNode;
 }
-
 
 //hooks
 

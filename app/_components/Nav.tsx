@@ -16,7 +16,7 @@ const Nav = () => {
               ))}
             </ul>
           }
-          openBtnProp={
+          triggerElement={
             <MenuIcon
               fillColor={
                 "fill-current text-DarkGrayishBlue hover:text-Black cursor-pointer lg:hidden "

@@ -3,13 +3,13 @@ import CloseIcon from "./icons/CloseIcon";
 import { ModalsProps } from "../_types/types";
 import useModal from "../_hooks/useModal";
 
-function Modal({ children, openBtnProp }: ModalsProps) {
+function Modal({ children, triggerElement }: ModalsProps) {
   const { showModal, handleShow, handleHide } = useModal();
 
   return (
     <>
       <button onClick={handleShow} className="focus:outline-none">
-        {openBtnProp}
+        {triggerElement}
       </button>
       {showModal && (
         <>
@@ -23,8 +23,11 @@ function Modal({ children, openBtnProp }: ModalsProps) {
               id="overlay"
               className="bg-black bg-opacity-75 w-screen h-screen "
             >
-              <div className=" self-center my-36 rounded-md p-2">
-                <button onClick={handleHide} className="float-right p-10">
+              <div className=" flex flex-col m-20">
+                <button
+                  onClick={handleHide}
+                  className="self-center p-2 ml-[30rem]"
+                >
                   <CloseIcon
                     fillColor={
                       "fill-current text-white hover:text-Orange cursor-pointer"
