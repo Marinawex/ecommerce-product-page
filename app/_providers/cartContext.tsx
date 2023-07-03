@@ -7,7 +7,7 @@ export const cartItemsContext = createContext<Array<CartItem> | null>(null);
 export const cartItemsDispatchContext =
   createContext<React.Dispatch<CartAction> | null>(null);
 
-const initialCartItems: Array<CartItem> = localStorage.getItem("cart-Items")
+const initialCartItems: Array<CartItem> = window.localStorage.getItem("cart-Items")
   ? JSON.parse(localStorage.getItem("cart-Items") || "")
   : [];
 

@@ -19,7 +19,7 @@ const AddtoCart = ({ product }: { product: Product }) => {
   }
 
   useEffect(() => {
-    localStorage.setItem("cart-Items", JSON.stringify(cartItems));
+    window.localStorage.setItem("cart-Items", JSON.stringify(cartItems));
   }, [cartItems]);
 
   return (
