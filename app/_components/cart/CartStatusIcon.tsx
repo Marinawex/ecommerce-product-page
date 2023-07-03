@@ -20,7 +20,6 @@ function CartStatusIcon(): React.ReactElement {
         </div>
       )}
       <CartModal
-        children={<Cart />}
         triggerElement={
           <CartIcon
             fillColor={
@@ -28,7 +27,9 @@ function CartStatusIcon(): React.ReactElement {
             }
           />
         }
-      />
+      >
+        {<Cart />}
+      </CartModal>
     </div>
   );
 }

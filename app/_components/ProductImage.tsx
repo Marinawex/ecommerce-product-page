@@ -47,7 +47,6 @@ const ProductImage = () => {
         </button>
 
         <Modal
-          children={<LightBox />}
           triggerElement={
             <Image
               src={images[currentImageIndex].image}
@@ -58,7 +57,9 @@ const ProductImage = () => {
               className="lg:rounded-xl"
             ></Image>
           }
-        />
+        >
+          {<LightBox />}
+        </Modal>
 
         <button
           onClick={SlideImageRight}
