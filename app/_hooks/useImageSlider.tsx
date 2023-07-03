@@ -41,7 +41,7 @@ function useImageSlider() {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [currentImageIndex]);
+  }, [currentImageIndex,SlideImageLeft,SlideImageRight]);
 
   return {
     images,
